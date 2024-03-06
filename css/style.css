@@ -64,6 +64,7 @@ p {
 }
 #menu > a{
     margin:1.5%;
+    text-align: center;
 }
 
 .main_menu > a {
