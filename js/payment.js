@@ -10,4 +10,8 @@ document.addEventListener("DOMContentLoaded", function () {
       $("form")[0].reportValidity()
     }
   })
+
+
+  document.getElementById("totalPayment").innerText =
+    calculateTotal() + ' ש"ח '
 })
