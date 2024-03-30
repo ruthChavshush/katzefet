@@ -1,4 +1,3 @@
-
 body {
   text-align: center;
   direction: rtl;
@@ -9,12 +8,12 @@ body {
   justify-content: center;
   align-items: center;
   min-height: 100vh;
-   font-size: 1rem; 
+  font-size: 1rem;
   overflow-x: hidden;
 }
-h2{
-   color: #834317;
-   font-size: 60px; 
+h2 {
+  color: #834317;
+  font-size: 60px;
 }
 .longimg {
   width: 98.9vw;
@@ -54,17 +53,17 @@ p {
   z-index: -2;
 }
 #menu {
-    margin-top: 50px;
+  margin-top: 50px;
   align-items: center;
   justify-content: center;
   display: flex;
   /* flex-flow: row wrap; */
-  
+
   /* width: 100vw; */
 }
-#menu > a{
-    margin:1.5%;
-    text-align: center;
+#menu > a {
+  margin: 1.5%;
+  text-align: center;
 }
 
 .main_menu > a {
@@ -80,29 +79,27 @@ textarea {
   font-family: rubik light;
   background-color: transparent;
 }
-.inputs{
-    margin: auto;
-    width: 30vw;
-    min-width: 400px;
-   
+.inputs {
+  margin: auto;
+  width: 30vw;
+  min-width: 400px;
 }
 #story p {
   width: 95%;
   justify-content: center;
- 
 }
 #story {
   height: auto;
   overflow: auto;
-   font-size: 20px;
-   width: 50vw;
-   margin:auto;
-   min-width: 400px; 
-   margin-bottom: 40px;
+  font-size: 20px;
+  width: 50vw;
+  margin: auto;
+  min-width: 400px;
+  margin-bottom: 40px;
 }
 .second_right p {
   /* width: 58%; */
-  margin:auto;
+  margin: auto;
 }
 #button {
   background-color: lightseagreen;
@@ -120,7 +117,7 @@ textarea {
   display: flow-root;
   font-size: 23px;
   /* background-color: #F2E7F6 ; */
-background-color: #FBDDEB;
+  background-color: #fbddeb;
   background-repeat: no-repeat;
   background-size: cover;
   background-attachment: fixed;
@@ -129,8 +126,8 @@ background-color: #FBDDEB;
   margin: 0;
   align-items: center;
 }
-:nth-of-type(.main) p{
-    margin:30px;
+:nth-of-type(.main) p {
+  margin: 30px;
 }
 .top_border {
   border-top: 5px solid #4f2619;
@@ -166,7 +163,7 @@ div.main::nth-of-type(3) {
 }
 .branches_gallery {
   display: flex;
-  flex-flow: row wrap; 
+  flex-flow: row wrap;
   justify-content: center;
 }
 .contained {
@@ -178,51 +175,50 @@ div.main::nth-of-type(3) {
 .branch {
   width: 98%;
 }
-div.second_left p{
-    margin:0px 30px 0px 30px;
+div.second_left p {
+  margin: 0px 30px 0px 30px;
+  padding-left: 1%;
 }
-div.second_right p{
-    margin:0px 30px 0px 30px;
+div.second_right p {
+  margin: 0px 30px 0px 30px;
 }
-.second_right{
-    margin: auto;
+.second_right {
+  margin: auto;
 }
-@media screen and (max-width:950px)
-{
-    #menu > a{
-        margin: 3%;
-    }
+@media screen and (max-width: 950px) {
+  #menu > a {
+    margin: 3%;
+  }
 }
 @media screen and (max-width: 600px) {
-    button span{
-        font-size: 15px;
-    }
-    form{
-        margin: 2% 10% 2%;
-    }
-    body{
-        font-size: 15px;
-    }
-    h2{
-        font-size: 40px;
-    }
-   .buttonBigger span {
-        font-size: 15px;
-    }
-    #span{
-        font-size: 15px;
-    }
-#footerLogo{
+  button span {
+    font-size: 15px;
+  }
+  form {
+    margin: 2% 10% 2%;
+  }
+  body {
+    font-size: 15px;
+  }
+  h2 {
+    font-size: 40px;
+  }
+  .buttonBigger span {
+    font-size: 15px;
+  }
+  #span {
+    font-size: 15px;
+  }
+  #footerLogo {
     display: none;
-}
-#footer-icons{
+  }
+  #footer-icons {
     margin: auto;
-}
+  }
   .top_border {
     height: 110vh;
   }
   #menu {
-    
     margin: auto;
   }
   #menu > a {
@@ -234,10 +230,9 @@ div.second_right p{
   }
 }
 
-div#third p{
-    color: white;
-    font-size: 30px;
-
+div#third p {
+  color: white;
+  font-size: 30px;
 }
 #menu > div > a > img {
   width: 100%;
@@ -268,22 +263,24 @@ div#third p{
   border: 0px;
 }
 
-#first_p{
-    margin: 0px 45px 0px 45px
+#first_p {
+  margin: 0px 45px 0px 45px;
 }
 nav {
-  margin: 30px;
+  margin-top: 30px;
 }
-.video1 {
+
+#video {
   height: 120vh;
-  width: auto;
+  width: 100%;
   position: absolute;
   z-index: -3;
   left: 0px;
   top: 0px;
+  background-color: red;
 }
 .main_menu_div {
-  height: 100vh;
+  height: 90vh;
   z-index: 10;
 }
 #main_menu a {
@@ -303,7 +300,6 @@ figure {
   margin: 3px;
   min-width: 30px;
 }
-
 
 /* form {
     margin: 2% 30% 2%;
@@ -468,7 +464,7 @@ table {
   font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
   font-size: 180%;
   display: inline;
-   margin: 100px 50px 100px 50px; 
+  margin: 100px 50px 100px 50px;
 }
 tbody {
   border: 300px;
@@ -564,11 +560,7 @@ footer {
 footer > img {
   width: 99vw;
 }
-/* #story{
-   width:50vw;
-   height: auto;
-   min-width: 400px;
-   margin: auto;
-   margin-bottom: 50px;
-   font-size: 20px;
-} */
+
+h2{
+  margin-left: 2%;
+} 
