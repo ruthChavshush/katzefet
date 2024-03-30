@@ -1,4 +1,3 @@
-
 function getShoppingCart() {
   console.log("get shopping cart")
   const shoppingCart = sessionStorage.getItem("shoppingCart")
@@ -6,6 +5,10 @@ function getShoppingCart() {
     : []
   console.log(shoppingCart)
   return shoppingCart
+}
+
+function resetShoppingCart() {
+  sessionStorage.setItem("shoppingCart", [])
 }
 
 function addItemToCart(productToAdd) {

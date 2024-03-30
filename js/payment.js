@@ -1,7 +1,10 @@
 document.addEventListener("DOMContentLoaded", function () {
+  setTotalPaymentText()
   const submitBtn = document.getElementById("submitBtn")
 
   submitBtn.addEventListener("click", function (event) {
+    resetShoppingCart()
+    setTotalPaymentText()
     event.preventDefault()
     if ($("form")[0].checkValidity()) {
       $("#myModal").modal("show")
@@ -10,8 +13,8 @@ document.addEventListener("DOMContentLoaded", function () {
       $("form")[0].reportValidity()
     }
   })
-
-
-  document.getElementById("totalPayment").innerText =
-    calculateTotal() + ' ש"ח '
 })
+
+function setTotalPaymentText() {
+  document.getElementById("totalPayment").innerText = calculateTotal() + ' ש"ח '
+}

@@ -148,3 +148,8 @@
 .tag:hover {
   background-color: #e0e0e0;
 }
+
+#totalPaymentText {
+  text-decoration: none;
+  color: white;
+}
