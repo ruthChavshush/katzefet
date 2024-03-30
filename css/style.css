@@ -212,7 +212,7 @@ div.second_right p{
     #span{
         font-size: 15px;
     }
-#fLogo{
+#footerLogo{
     display: none;
 }
 #footer-icons{
@@ -267,13 +267,7 @@ div#third p{
 
   border: 0px;
 }
-.title_flavours {
-  margin: 60px;
-  width: 40vw;
-  min-width: 400px;
-  padding: 0px;
-  border: 0px;
-}
+
 #first_p{
     margin: 0px 45px 0px 45px
 }
@@ -298,7 +292,7 @@ nav {
 #main_menu a:hover {
   color: goldenrod;
 }
-.flavours_gallery {
+#flavours_gallery {
   display: flex;
   flex-flow: row wrap;
   justify-content: center;
@@ -544,11 +538,8 @@ footer {
 }
 .icon {
   width: 25px;
-  margin: 30px 7px 30px 7px;
+  margin: 80px 0px 0px 30px;
   padding: 0px;
-}
-.icon:hover{
-    title
 }
 #footer-logo-img {
   width: 150px;
@@ -564,13 +555,11 @@ footer {
   margin-right: auto;
   margin-left: 5px;
 }
-#footer-flex > img {
-  width: 10vw;
-  margin: 5px;
-  height: auto;
-    /* width: 100px; */
-    /* height: 10px; */
-  /* display: inline; */
+#footerLogo {
+  width: 55px;
+  margin-top: 75px;
+  margin-right: 8px;
+  height: 40px;
 }
 footer > img {
   width: 99vw;
