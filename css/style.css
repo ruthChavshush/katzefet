@@ -166,12 +166,7 @@ div.main::nth-of-type(3) {
   flex-flow: row wrap;
   justify-content: center;
 }
-.contained {
-  width: 25%;
-  min-width: 300px;
-  margin: 10px;
-  margin-bottom: 25px;
-}
+
 .branch {
   width: 98%;
 }
@@ -440,22 +435,7 @@ select {
   font-family: rubik light;
   font-size: 20px;
 }
-.buttonWaze {
-  width: 50%;
-  height: 7vh;
-  font-family: rubik light;
-  font-size: 20px;
-  background-color: #e41743;
-  border: 0px;
-  border-radius: 28px;
-}
-.buttonWaze:hover {
-  width: 53%;
-  height: 7.4vh;
-}
-.buttonWaze a {
-  color: white;
-}
+
 table {
   border-collapse: collapse;
   letter-spacing: 1px;
