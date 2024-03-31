@@ -1,7 +1,6 @@
 function getShoppingCart() {
-  return sessionStorage.getItem("shoppingCart")
-    ? JSON.parse(sessionStorage.getItem("shoppingCart"))
-    : []
+  const shoppingCart = sessionStorage.getItem("shoppingCart")
+  return shoppingCart ? JSON.parse(shoppingCart) : []
 }
 
 function getProducts() {
@@ -25,11 +24,12 @@ function addItemToCart(productToAdd) {
       (productInCart) => productInCart.makat === productToAdd.makat
     )
     product.quantityInStore--
+    const { quantityInStore, ...productDetails } = productToAdd
     existingProduct
       ? existingProduct.amount++
-      : shoppingCart.push({ ...productToAdd, amount: 1 })
-    sessionStorage.setItem("shoppingCart", shoppingCart)
-    sessionStorage.setItem("products", products)
+      : shoppingCart.push({ ...productDetails, amount: 1 })
+    sessionStorage.setItem("shoppingCart", JSON.stringify(shoppingCart))
+    sessionStorage.setItem("products", JSON.stringify(products))
   } else {
     alert("מצטערים, המוצר אזל מהמלאי:(")
   }
@@ -38,12 +38,10 @@ function changeProductAmount(productIndex, changingAmount) {
   let shoppingCart = getShoppingCart()
   let productInCart = shoppingCart[productIndex]
   const products = getProducts()
-  const product = products.find(
-    (productInCart) => productInCart.makat === productToAdd.makat
-  )
+  const product = products.find((p) => p.makat === productInCart.makat)
 
   if (changingAmount == "1") {
-    if (productInCart.amount + 1 <= product.quantityInStore) {
+    if (product.quantityInStore >= 1) {
       productInCart.amount += 1
       product.quantityInStore--
     } else {
@@ -54,8 +52,8 @@ function changeProductAmount(productIndex, changingAmount) {
     productInCart.amount <= 0 ? shoppingCart.splice(productIndex, 1) : null
     product.quantityInStore++
   }
-  sessionStorage.setItem("shoppingCart", shoppingCart)
-  sessionStorage.setItem("products", products)
+  sessionStorage.setItem("shoppingCart", JSON.stringify(shoppingCart))
+  sessionStorage.setItem("products", JSON.stringify(products))
   renderShoppingCart()
 }
 
@@ -66,6 +64,7 @@ function clearShoppingCart() {
 }
 
 function calculateTotal() {
+  const shoppingCart = getShoppingCart()
   let total = 0
   for (let item of shoppingCart) {
     total += item.amount * item.cost
@@ -81,6 +80,7 @@ function removeItemFromCart(indexItemToRemove) {
 }
 
 function renderShoppingCart() {
+  let shoppingCart = getShoppingCart()
   const shoppingCartList = document.getElementById("shoppingCartList")
   let strCartListTags = ""
   if (shoppingCart.length) {

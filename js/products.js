@@ -116,28 +116,28 @@ document.addEventListener("DOMContentLoaded", function () {
     ],
     drinks: [
       {
-        makat: "1",
+        makat: "17",
         name: "מים",
         cost: "6",
         imgSrc: "../images/drinks/water.png",
         quantityInStore: "10",
       },
       {
-        makat: "2",
+        makat: "18",
         name: "מוגז",
         cost: "10",
         imgSrc: "../images/drinks/schweppes.jpg",
         quantityInStore: "10",
       },
       {
-        makat: "3",
+        makat: "19",
         name: "פחית",
         cost: "7",
         imgSrc: "../images/drinks/coca.jpg",
         quantityInStore: "10",
       },
       {
-        makat: "4",
+        makat: "20",
         name: "בקבוק גדול",
         cost: "12",
         imgSrc: "../images/drinks/bigBottle.png",
@@ -187,8 +187,13 @@ document.addEventListener("DOMContentLoaded", function () {
     })
   })
   renderCards("iceCream")
-  const shoppingCart = sessionStorage.getItem("products")
-  if (!shoppingCart) {
-    sessionStorage.setItem("products", JSON.stringify(shopProducts))
+  const products = JSON.parse(sessionStorage.getItem("products"))
+  if (!products) {
+    sessionStorage.setItem(
+      "products",
+      JSON.stringify([...shopProducts.drinks, ...shopProducts.iceCream])
+    )
+  } else {
+    console.log(products)
   }
 })
