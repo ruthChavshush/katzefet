@@ -11,7 +11,7 @@ document.addEventListener("DOMContentLoaded", function () {
     loginBtn.style.display = "none"
   } else {
     usernameHeader.textContent = ""
-    logoutBtn.style.display = "none"
+    logoutBtn?.style.display = "none"
     loginBtn.style.display = "inline-block"
   }
 
