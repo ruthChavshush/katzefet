@@ -1,3 +1,5 @@
+import axios from "axios"
+
 document.addEventListener("DOMContentLoaded", function () {
   const loginBtn = document.getElementById("loginBtn")
   const logoutBtn = document.getElementById("logoutBtn")
@@ -16,9 +18,17 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 
   submitBtn.addEventListener("click", function () {
-    const inputValue = document.getElementById("exampleInputEmail1").value
+    const inputValue = document.getElementById("userNameId").value
     sessionStorage.setItem("username", inputValue)
-    location.reload()
+    axios
+      .get("http://localhost:3000")
+      .then((response) => {
+        console.log("Success:", response.data)
+        location.reload()
+      })
+      .catch((error) => {
+        console.error("Error:", error)
+      })
   })
 
   logoutBtn.addEventListener("click", function () {
