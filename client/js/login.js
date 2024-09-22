@@ -21,7 +21,7 @@ document.addEventListener("DOMContentLoaded", function () {
     const inputValue = document.getElementById("userNameId").value
     sessionStorage.setItem("username", inputValue)
     axios
-      .get("http://localhost:3000")
+      .get("http://localhostp:3000")
       .then((response) => {
         console.log("Success:", response.data)
         location.reload()
