@@ -180,6 +180,11 @@ div.second_right p {
 .second_right {
   margin: auto;
 }
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
 @media screen and (max-width: 950px) {
   #menu > a {
     margin: 3%;

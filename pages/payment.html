@@ -37,7 +37,7 @@
   <body>
     <header>
       <div id="userDetails" style="padding: 2%">
-        <span id="userName"></span>
+        <span id="userHeader"></span>
       </div>
     </header>
     <nav>
@@ -109,7 +109,7 @@
             />
           </div>
           <br />
-          <button class="button" id="submitBtn">לתשלום</button>
+          <button type="submit" class="button" id="submitBtn">לתשלום</button>
         </div>
       </form>
       <div id="myModal" class="modal fade">
@@ -163,6 +163,12 @@
       <img src="../images/small-sliftizk.jpg" />
     </footer>
     <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.7.7/axios.min.js"
+      integrity="sha512-DdX/YwF5e41Ok+AI81HI8f5/5UsoxCVT9GKYZRIzpLxb8Twz4ZwPPX+jQMwMhNQ9b5+zDEefc+dcvQoPWGNZ3g=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+    <script
       src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
       integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
       crossorigin="anonymous"
@@ -177,6 +183,7 @@
       integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
       crossorigin="anonymous"
     ></script>
+    <script src="../js/main.js"></script>
     <script src="../js/payment.js"></script>
     <script src="../js/shoppingCart.js"></script>
     <script src="../js/products.js"></script>
