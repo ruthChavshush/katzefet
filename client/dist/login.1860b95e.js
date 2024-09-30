@@ -6105,7 +6105,7 @@ document.addEventListener("DOMContentLoaded", function () {
   submitBtn.addEventListener("click", function () {
     var inputValue = document.getElementById("userNameId").value;
     sessionStorage.setItem("username", inputValue);
-    _axios.default.get("http://localhost:3000").then(function (response) {
+    _axios.default.get("http://localhostp:3000").then(function (response) {
       console.log("Success:", response.data);
       location.reload();
     }).catch(function (error) {
@@ -6142,7 +6142,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "59863" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "62381" + '/');
   ws.onmessage = function (event) {
     checkedAssets = {};
     assetsToAccept = [];

@@ -1,162 +1,37 @@
-document.addEventListener("DOMContentLoaded", function () {
-  const shopProducts = {
-    iceCream: [
-      {
-        makat: "1",
-        name: "גלידת כרמל",
-        cost: "5",
-        imgSrc: "../images/iceCream/caramel.png",
-        quantityInStore: "5",
-      },
-      {
-        makat: "2",
-        name: "שוקולד שוויצרי ",
-        cost: "5",
-        imgSrc: "../images/iceCream/chocolate.png",
-        quantityInStore: "5",
-      },
-      {
-        makat: "3",
-        name: "שוקולד מריר",
-        cost: "25",
-        imgSrc: "../images/iceCream/dark.png",
-        quantityInStore: "5",
-      },
-      {
-        makat: "4",
-        name: "אספרסו",
-        cost: "23",
-        imgSrc: "../images/iceCream/espresso.png",
-        quantityInStore: "5",
-      },
-      {
-        makat: "5",
-        name: "קינדר בואנו",
-        cost: "22",
-        imgSrc: "../images/iceCream/kinder.png",
-        quantityInStore: "5",
-      },
-      {
-        makat: "6",
-        name: "פיסטוק",
-        cost: "42",
-        imgSrc: "../images/iceCream/fistok.png",
-        quantityInStore: "5",
-      },
-      {
-        makat: "7",
-        name: "וניל צרפתי",
-        cost: "34",
-        imgSrc: "../images/iceCream/french.png",
-        quantityInStore: "5",
-      },
-      {
-        makat: "8",
-        name: "מסטיק",
-        cost: "24",
-        imgSrc: "../images/iceCream/gum.png",
-        quantityInStore: "5",
-      },
-      {
-        makat: "9",
-        name: "עוגיות לוטוס",
-        cost: "24",
-        imgSrc: "../images/iceCream/lotus.png",
-        quantityInStore: "5",
-      },
-      {
-        makat: "10",
-        name: "עוגיות אוראו",
-        cost: "34",
-        imgSrc: "../images/iceCream/oreo.png",
-        quantityInStore: "5",
-      },
-      {
-        makat: "11",
-        name: "פררו רושה",
-        cost: "22",
-        imgSrc: "../images/iceCream/roshe.png",
-        quantityInStore: "5",
-      },
-      {
-        makat: "12",
-        name: "וניל מקופלת",
-        cost: "15",
-        imgSrc: "../images/iceCream/vanille.png",
-        quantityInStore: "5",
-      },
-      {
-        makat: "13",
-        name: "סורבה תות",
-        cost: "32",
-        imgSrc: "../images/iceCream/strawberry.png",
-        quantityInStore: "5",
-      },
-      {
-        makat: "14",
-        name: "סורבה פירות יער",
-        cost: "17",
-        imgSrc: "../images/iceCream/yaar.png",
-        quantityInStore: "5",
-      },
-      {
-        makat: "15",
-        name: "סורבה פסיפלורה",
-        cost: "25",
-        imgSrc: "../images/iceCream/pasiflora.png",
-        quantityInStore: "5",
-      },
-      {
-        makat: "16",
-        name: "סורבה מנגו",
-        cost: "23",
-        imgSrc: "../images/iceCream/mango.png",
-        quantityInStore: "5",
-      },
-    ],
-    drinks: [
-      {
-        makat: "17",
-        name: "מים",
-        cost: "6",
-        imgSrc: "../images/drinks/water.png",
-        quantityInStore: "10",
-      },
-      {
-        makat: "18",
-        name: "מוגז",
-        cost: "10",
-        imgSrc: "../images/drinks/schweppes.jpg",
-        quantityInStore: "10",
-      },
-      {
-        makat: "19",
-        name: "פחית",
-        cost: "7",
-        imgSrc: "../images/drinks/coca.jpg",
-        quantityInStore: "10",
-      },
-      {
-        makat: "20",
-        name: "בקבוק גדול",
-        cost: "12",
-        imgSrc: "../images/drinks/bigBottle.png",
-        quantityInStore: "10",
-      },
-    ],
-  }
+import axios from "axios"
 
+document.addEventListener("DOMContentLoaded", function () {
   const container = document.getElementById("iceCreamContainer")
   container.classList.add("container")
 
-  function renderCards(selectedType) {
+  // Function to fetch products from the server
+  async function fetchShopProducts() {
+    try {
+      console.log("try to fetch products")
+      const response = await axios.get("http://localhost:5000/storeItems") // Update the URL to match your API endpoint
+      console.log("response :", response)
+      const shopProducts = response.data.products
+      // sessionStorage.setItem("products", JSON.stringify(shopProducts))
+      return shopProducts
+    } catch (error) {
+      console.log("Error fetching shop products:", error)
+      return null
+    }
+  }
+
+  function renderCards(products, selectedType) {
+    console.log("renderCards")
+    console.log("selectedType :", selectedType)
+    console.log("products :", products)
     container.innerHTML = ""
-    shopProducts[selectedType].forEach((product) => {
+    products[selectedType].forEach((product) => {
+      console.log("product :", product)
       const card = document.createElement("div")
       card.classList.add("card")
 
       const img = document.createElement("img")
-      img.src = product.imgSrc
+      img.src = "../images/iceCream/fistok.png" 
+      console.log('product.img :', product.img);
       img.alt = product.name
 
       const name = document.createElement("h2")
@@ -180,20 +55,26 @@ document.addEventListener("DOMContentLoaded", function () {
       container.appendChild(card)
     })
   }
-  document.querySelectorAll(".tag").forEach((tag) => {
-    tag.addEventListener("click", function () {
-      const selectedType = this.getAttribute("data-filter")
-      renderCards(selectedType)
-    })
-  })
-  renderCards("iceCream")
-  const products = JSON.parse(sessionStorage.getItem("products"))
-  if (!products) {
-    sessionStorage.setItem(
-      "products",
-      JSON.stringify([...shopProducts.drinks, ...shopProducts.iceCream])
-    )
-  } else {
-    console.log(products)
+
+  // Load products from the server or from sessionStorage if available
+  async function initializeProducts() {
+    console.log("initializeProducts")
+    // let products = JSON.parse(sessionStorage.getItem("products"))
+    // if (!products) {
+    const products = await fetchShopProducts()
+    // }
+    console.log("products :", products)
+    if (products) {
+      renderCards(products, "iceCream")
+      document.querySelectorAll(".tag").forEach((tag) => {
+        tag.addEventListener("click", function () {
+          const selectedType = this.getAttribute("data-filter")
+          renderCards(products, selectedType)
+        })
+      })
+    }
   }
+
+  // Call the function to initialize the product display
+  initializeProducts()
 })
