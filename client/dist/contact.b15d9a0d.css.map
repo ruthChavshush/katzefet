@@ -1,1 +1,0 @@
-{"version":3,"sources":["css/contact.css"],"names":[],"mappings":"AAAA;AACA;AACA;AACA;AACA","file":"contact.b15d9a0d.css","sourceRoot":"..","sourcesContent":[".title_contact_box {\r\n  display: flex;\r\n  justify-content: center;\r\n}\r\n"]}
